@@ -34,12 +34,12 @@
 * Ohjaa reititin LoRaWAN-palvelimelle (tässä tapauksessa ChirpStack-palvelin Draginon sisällä).
 * Lisää `/backend/decoder.js` -tiedoston sisältö LoRaWAN-palvelimen *Payload Formatter* -osioon, jotta tavumuotoinen data muuttuu JSON-muotoon.
 ### 4. Tietokanta (`/backend`) 
-* Tietokantaa ajetaan Raspberry Pi 5:ssä, mikä tekee asennuksesta vaivatonta. 
+* Tietokantaa ajetaan Raspberry Pi 5:ssä. 
 * Asenna Influxdb -tietokanta ohjeiden mukaisesti
-* Käynnistä tietokanta komennolla: ```???? ```
+* Käynnistä tietokanta
 ## 🔒 Tietoturva & Etäyhteys
 * Jos asennat etäyhteyden, etäyhteys InfluxDB-tietokantaan on suojattava. Älä avaa tietokantaportteja suoraan julkiseen internetiin. Suositellut tavat etäyhteyden muodostamiseen: *
 *  Käytä RPI omaa etäyhteyttä Raspberry Pi Connect**
-*  Tailscale / WireGuard (Suositeltu myös):** Luo suojattu VPN-yhteys laitteidesi välille ilman avoimia portteja. 
+*  Tailscale / WireGuard: voit tehdä suojatun VPN-yhteyden laitteitesi välille ilman avoimia portteja. 
     
     * ### 🤝 Osallistuminen, parannusehdotukset ja virheilmoitukset ovat tervetulleita!
