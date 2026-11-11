@@ -1,5 +1,5 @@
 # Arduino_irrigation_water_analysis_system_using_LoRaWan 
-# Arduino_kastelu_veden_analysointijärjestelmä_LoRaWan-yhteydellä 
+# Arduino_kasteluveden_analysointijärjestelmä_LoRaWan-yhteydellä 
 * Under construction!!!
 * Irrigation water analysis equipment passing through the growing medium. Vertical farming. Kasvien kastelussa kierrätetyn veden analysointijärjestelmä.
 * Tämä on avoimen lähdekoodin IoT-projekti, joka mittaa kasvihuoneessa/tunneliviljelyssä linjaston läpi kulkeneen veden määrää, johtavuutta ja pH:ta käyttäen akkukäyttöistä Arduino MKR WAN 1310-solmua. Data lähetetään pitkän kantaman LoRaWAN-verkon ja Dragino-reitittimen kautta etähallittavaan Raspberry Pi:n InfluxDB-aikasarjatietokantaan.
