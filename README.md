@@ -27,9 +27,10 @@
 ### 1. Laitteisto ja kytkennät: 
 * Katso tarkat kytkentäkaaviot ja pinnijärjestykset kansiosta `/hardware`.
 ### 2. Solmun ohjelmointi (`/firmware`) 
-* Avaa koodi Arduino IDE:ssä.
+* Arduino MKR1310: Avaa koodi Arduino IDE:ssä.
 * Asenna tarvittavat kirjastot: `Arduino Low Power`, `MKRWAN_V2` ja `DFRobot_ECPRO-master`, `Sparkfun_VL53L1X_4m_Laser_Distance_Sensor`.
 * Avaa tiedosto `arduino_secrets.h` (tai vastaava) ja syötä oma LoRaWAN-avaimesi (`AppEUI`, `AppKey` ovat MKR1310:ssä valmiiksi ohjelmoituna).
+* ESP32-C3: Lataa tiedosto `  `
 ### 3. Dragino & LoRaWAN-palvelin (`/gateway`) 
 * Konfiguroi Dragino-reititin käyttämään oikeaa taajuussuunnitelmaa (`EU868`, katso kuvankaappaukset).
 * Ohjaa reititin LoRaWAN-palvelimelle (tässä tapauksessa ChirpStack-palvelin Draginon sisällä).
