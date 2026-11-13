@@ -7,7 +7,7 @@ int pos = 0;
 
 RTC_DATA_ATTR int bootCount = 0;
 #define uS_TO_S_FACTOR 1000000ULL /* Conversion factor for micro seconds to seconds */
-#define TIME_TO_SLEEP  86400
+#define TIME_TO_SLEEP  86400  /*Change time according to our neeeds*/
 
 void print_wakeup_reason()
 {
@@ -36,7 +36,7 @@ void setup()
 
   digitalWrite(MOSFET_ENABLE, HIGH); // MOSFET ON
 	Serial.println("Gate activated");
-  ESP32PWM::allocateTimer(0);
+    ESP32PWM::allocateTimer(0);
 	ESP32PWM::allocateTimer(1);
 	ESP32PWM::allocateTimer(2);
 	ESP32PWM::allocateTimer(3);
