@@ -1,6 +1,8 @@
 # Arduino_irrigation_water_analysis_system_using_LoRaWan 
 # Arduino_kasteluveden_analysointijärjestelmä_LoRaWan-yhteydellä 
 <img src="mkr_lora_bb.png" alt="Kytkentäkaavio" width="600">
+# Arduino_Automaattinen vedenpoistojärjestelmä 6 tunnin välein
+<img src="Kerätyn veden tyhjentäminen.png" alt="Kytkentäkaavio" width="600">
 * Under construction!!!
 <img src="EUkuva.png" alt="Kytkentäkaavio" width="1000">
 * Irrigation water analysis equipment passing through the growing medium. Vertical farming. Kasvien kastelussa kierrätetyn veden analysointijärjestelmä.
