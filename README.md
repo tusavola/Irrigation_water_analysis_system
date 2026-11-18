@@ -1,20 +1,24 @@
 # Arduino irrigation water analysis system using LoRaWan 
 # Arduino kasteluveden analysointijärjestelmä LoRaWan-yhteydellä 
-<img src="mkr_lora_bb.png" alt="Kytkentäkaavio mittausosasta" width="600">
-# Arduino_Automaattinen vedenpoistojärjestelmä 6 tunnin välein
-<img src="Kerätyn veden tyhjentäminen.png" alt="Kytkentäkaavio säiliön tyhjennysosasta" width="600">
+#
+*Kytkentäkaavio mittausosasta\
+<img src="mkr_lora_bb.png" alt="Kytkentäkaavio mittausosasta" width="600">\
+*Kytkentäkaavio säiliön tyhjennysosasta\
+<img src="Kerätyn veden tyhjentäminen.png" alt="Kytkentäkaavio säiliön tyhjennysosasta" width="600">\
 * Under construction!!!
-<img src="EUkuva.png" alt="Kytkentäkaavio" width="1000">
+<img src="EUkuva.png" alt="Kytkentäkaavio" width="1000">\
+
 * Irrigation water analysis equipment passing through the growing medium. Vertical farming. Kasvien kastelussa kierrätetyn veden analysointijärjestelmä.
+
 * Tämä on avoimen lähdekoodin IoT-projekti, joka mittaa kasvihuoneessa/tunneliviljelyssä linjaston läpi kulkeneen veden määrää, johtavuutta ja pH:ta käyttäen akkukäyttöistä Arduino MKR WAN 1310-solmua. Data lähetetään pitkän kantaman LoRaWAN-verkon ja Dragino-reitittimen kautta etähallittavaan Raspberry Pi:n InfluxDB-aikasarjatietokantaan.
 
 ## 🚀 Arkkitehtuuri
 
-### End Node (Arduino) --(LoRa 868MHz)--> Gateway (Dragino) --> Backend (InfluxDB)
+### End Node (Arduino MKR) --(LoRa 868MHz)--> Gateway (Dragino) --> ChirpStack --> Backend (InfluxDB)
 ### Mittaussolmu (Arduino MKR) --> (LoRa 868MHz)--> Gateway (Dragino) --> ChirpStack --> Backend (InfluxDB)
 
 ## 📁 Repositorion rakenne 
-* `/firmware` - Arduino C++ koodi (lähettävä pää) sekä veden tyhjennysventtiilin ohjaus
+* `/firmware` - Arduino C++ koodi (lähettävä puoli) sekä veden tyhjennysventtiilin ohjaus
 * `/gateway` - Ohjeet ja asetukset Dragino-reitittimen konfigurointiin
 * `/backend` - InfluxDB-tietokannan asennusohjeet ja datan vastaanottoskriptit
 * `/hardware` - Kytkentäkaaviot, osaluettelo (BOM) ja mahdolliset 3D-tulostustiedostot
@@ -28,8 +32,9 @@
 ## 💻 Ohjelmistovaatimukset
   * Arduino IDE mittaussolmun ja tyhjennysventtiilin ohjelmointiin 
 ## ⚙️ Käyttöönotto-ohjeet
+* Käytä rinnakkain Hacster.io -sivustoa ja Githubin kansioita. Githubissa ohjelmistot, Hacsterissa muu tarvittava materiaali.
 ### 1. Laitteisto ja kytkennät: 
-* Katso tarkat kytkentäkaaviot ja pinnijärjestykset kansiosta `/hardware`.
+* Katso tarkat kytkentäkaaviot ja pinnijärjestykset Hacster.io:sta tai kansiosta `/hardware`.
 ### 2. Solmun ohjelmointi (`/firmware`) 
 * Arduino MKR1310: Avaa koodi Arduino `ph_to_lora_github.ino` IDE:ssä.
 * Asenna tarvittavat kirjastot: `Arduino Low Power`, `MKRWAN_V2` ja `DFRobot_ECPRO-master`, `Sparkfun_VL53L1X_4m_Laser_Distance_Sensor`,`ESP32Servo`.
