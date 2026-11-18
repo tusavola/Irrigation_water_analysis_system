@@ -1,4 +1,59 @@
 # Arduino irrigation water analysis system using LoRaWan 
+#
+*Schematics, measurement part\
+<img src="mkr_lora_bb.png" alt="Kytkentäkaavio mittausosasta" width="600">\
+*Schematics, tank emptying part\
+<img src="Kerätyn veden tyhjentäminen.png" alt="Kytkentäkaavio säiliön tyhjennysosasta" width="600">\
+* Under construction!!!
+<img src="EUkuva.png" alt="Kytkentäkaavio" width="1000">\
+
+* Irrigation water analysis equipment passing through the growing medium. Vertical farming.
+
+## 🚀 Arkkitehtuuri
+
+### End Node (Arduino MKR) --(LoRa 868MHz)--> Gateway (Dragino) --> ChirpStack --> Backend (InfluxDB)
+
+## 📁 Repositorion rakenne 
+* `/firmware` - Arduino C++ koodi (lähettävä puoli) sekä veden tyhjennysventtiilin ohjaus
+* `/gateway` - Ohjeet ja asetukset Dragino-reitittimen konfigurointiin
+* `/backend` - InfluxDB-tietokannan asennusohjeet ja datan vastaanottoskriptit
+* `/hardware` - Kytkentäkaaviot, osaluettelo (BOM) ja mahdolliset 3D-tulostustiedostot
+## 🛠️ Laitteisto ja komponentit 
+* **Mikrokontrolleri:** Arduino MKR WAN 1310 ja XIAO Esp32-C3
+* **LoRa-moduuli:** Murata CMWX1ZZABZ LoRa® module (sisältyy MKR 1310, Taajuus: 868 MHz EU)
+* **Anturit:** DFrobot analog pH sensor pro (SEN0169), DfRobot analog conductivity sensor (SEN0451), Adafruit StemmaQT VL53L4CD Time of Flight -etäisyysanturi 
+* **Gateway:** Dragino LoRaWAN Gateway LPS8V2 *
+* **Toimilaite** Servo- moottori 
+* **Virtalähde:**  AKY0393Li-Po -akku 2200mAh (Arduino + sensors), ? (XIAO), ? (Servo moottori)
+## 💻 Ohjelmistovaatimukset
+  * Arduino IDE mittaussolmun ja tyhjennysventtiilin ohjelmointiin 
+## ⚙️ Käyttöönotto-ohjeet
+* Käytä rinnakkain Hacster.io -sivustoa ja Githubin kansioita. Githubissa ohjelmistot, Hacsterissa muu tarvittava materiaali.
+### 1. Laitteisto ja kytkennät: 
+* Katso tarkat kytkentäkaaviot ja pinnijärjestykset Hacster.io:sta tai kansiosta `/hardware`.
+### 2. Solmun ohjelmointi (`/firmware`) 
+* Arduino MKR1310: Avaa koodi Arduino `ph_to_lora_github.ino` IDE:ssä.
+* Asenna tarvittavat kirjastot: `Arduino Low Power`, `MKRWAN_V2` ja `DFRobot_ECPRO-master`, `Sparkfun_VL53L1X_4m_Laser_Distance_Sensor`,`ESP32Servo`.
+* Avaa tiedosto `arduino_secrets.h` (tai vastaava) ja syötä oma LoRaWAN-avaimesi (`AppEUI`, `AppKey` ovat MKR1310:ssä valmiiksi ohjelmoituna).
+* ESP32-C3: Lataa tiedosto ` Drain_water_6_Tunti.ino, IDE:ssä,`Servomoottori MG996R`, `IRLU8721-N channel MOSFET`  
+### 3. Dragino & LoRaWAN-palvelin (`/gateway`) 
+* Konfiguroi Dragino-reititin käyttämään oikeaa taajuussuunnitelmaa (`EU868`, katso kuvankaappaukset).
+* Ohjaa reititin LoRaWAN-palvelimelle (tässä tapauksessa ChirpStack-palvelin Draginon sisällä).
+* Lisää `/backend/decoder.js` -tiedoston sisältö LoRaWAN-palvelimen *Payload Formatter* -osioon, jotta tavumuotoinen data muuttuu JSON-muotoon.
+### 4. Tietokanta (`/backend`) 
+* Tietokantaa ajetaan Raspberry Pi 5:ssä. 
+* Asenna Influxdb -tietokanta ohjeiden mukaisesti
+* Käynnistä tietokanta
+## 🔒 Tietoturva & Etäyhteys
+* Jos asennat etäyhteyden, etäyhteys InfluxDB-tietokantaan on suojattava. Älä avaa tietokantaportteja suoraan julkiseen internetiin. Suositellut tavat etäyhteyden muodostamiseen: *
+*  Käytä RPI omaa etäyhteyttä Raspberry Pi Connect**
+
+*  
+*  Tailscale / WireGuard: voit tehdä suojatun VPN-yhteyden laitteitesi välille ilman avoimia portteja. 
+    
+    * ### 🤝 Osallistuminen, parannusehdotukset ja virheilmoitukset ovat tervetulleita!
+ 
+ 
 # Arduino kasteluveden analysointijärjestelmä LoRaWan-yhteydellä 
 #
 *Kytkentäkaavio mittausosasta\
@@ -51,6 +106,9 @@
 ## 🔒 Tietoturva & Etäyhteys
 * Jos asennat etäyhteyden, etäyhteys InfluxDB-tietokantaan on suojattava. Älä avaa tietokantaportteja suoraan julkiseen internetiin. Suositellut tavat etäyhteyden muodostamiseen: *
 *  Käytä RPI omaa etäyhteyttä Raspberry Pi Connect**
+
+*  
 *  Tailscale / WireGuard: voit tehdä suojatun VPN-yhteyden laitteitesi välille ilman avoimia portteja. 
     
     * ### 🤝 Osallistuminen, parannusehdotukset ja virheilmoitukset ovat tervetulleita!
+
