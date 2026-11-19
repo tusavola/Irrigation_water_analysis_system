@@ -107,10 +107,8 @@
 * Asenna Influxdb -tietokanta ohjeiden mukaisesti
 * Käynnistä tietokanta
 ## 🔒 Tietoturva & Etäyhteys
-* Jos asennat etäyhteyden, etäyhteys InfluxDB-tietokantaan on suojattava. Älä avaa tietokantaportteja suoraan julkiseen internetiin. Suositellut tavat etäyhteyden muodostamiseen: *
-*  Käytä RPI omaa etäyhteyttä Raspberry Pi Connect**
-
-*  
+* Jos asennat etäyhteyden, etäyhteys InfluxDB-tietokantaan on suojattava. Älä avaa tietokantaportteja suoraan julkiseen internetiin. Suositellut tavat etäyhteyden muodostamiseen:
+*  Käytä RPI omaa etäyhteyttä `Raspberry Pi Connect`
 *  Tailscale / WireGuard: voit tehdä suojatun VPN-yhteyden laitteitesi välille ilman avoimia portteja. 
     
     * ### 🤝 Osallistuminen, parannusehdotukset ja virheilmoitukset ovat tervetulleita!
