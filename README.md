@@ -52,9 +52,11 @@
 * Raspberry Pi Connect: Use Raspberry Pi's native remote access tool.
 * Tailscale / WireGuard: Create a secure VPN connection between your devices without opening any public ports.
     
-    * ### 🤝 Contributions, improvement suggestions, and bug reports are welcome!
+     ### 🤝 Contributions, improvement suggestions, and bug reports are welcome!
  
- 
+
+
+# 
 # Arduino kasteluveden analysointijärjestelmä LoRaWan-yhteydellä 
 #
 *Kytkentäkaavio mittausosasta\
