@@ -45,19 +45,14 @@
 ### 4. Database (`/backend`) 
 * The database is hosted on a Raspberry Pi 5.
 * Install InfluxDB according to the provided instructions.
-• Start the database service.
+* Start the database service.
 
-* Tietokantaa ajetaan Raspberry Pi 5:ssä. 
-* Asenna Influxdb -tietokanta ohjeiden mukaisesti
-* Käynnistä tietokanta
-## 🔒 Tietoturva & Etäyhteys
-* Jos asennat etäyhteyden, etäyhteys InfluxDB-tietokantaan on suojattava. Älä avaa tietokantaportteja suoraan julkiseen internetiin. Suositellut tavat etäyhteyden muodostamiseen: *
-*  Käytä RPI omaa etäyhteyttä Raspberry Pi Connect**
-
-*  
-*  Tailscale / WireGuard: voit tehdä suojatun VPN-yhteyden laitteitesi välille ilman avoimia portteja. 
+## 🔒 Security & Remote access
+* If you set up remote access, the connection to the InfluxDB database must be secured. Do not expose database ports directly to the public internet. Recommended methods for remote access:
+* Raspberry Pi Connect: Use Raspberry Pi's native remote access tool.
+* Tailscale / WireGuard: Create a secure VPN connection between your devices without opening any public ports.
     
-    * ### 🤝 Osallistuminen, parannusehdotukset ja virheilmoitukset ovat tervetulleita!
+    * ### 🤝 Contributions, improvement suggestions, and bug reports are welcome!
  
  
 # Arduino kasteluveden analysointijärjestelmä LoRaWan-yhteydellä 
