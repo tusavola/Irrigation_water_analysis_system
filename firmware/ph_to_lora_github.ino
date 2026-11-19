@@ -202,9 +202,9 @@ void loop() {
     }
   }
   //Serial.println("Waiting for next Transmit");
-  delay(5000); // 2 minute intervals
+  delay(5000); 
   Wire.end();
   digitalWrite(Switch, LOW);
-  LowPower.sleep(1800000); //30min
+  LowPower.sleep(1800000); //30min to next LORA sending
   
 }
