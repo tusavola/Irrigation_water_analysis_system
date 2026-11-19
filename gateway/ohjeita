@@ -1,2 +1,4 @@
+Uncomment lines 85-88, if you don´t know your MKR WAN LORA EUI numbers and copy numbers to arduino_secrets.ino!
+Poista kommentit arduino -ohjelman riveiltä 85-88, niin saat sarjamonitoriin tehtaalla ohjelmoidut LORA EUI numerot. Kopioi ne arduino_secrets.ino -ohjelmaan.  
 Hyödylliset verkkosivut Dragino gateway asetuksiin ja Chirpstack konfigurointiin: 
 * https://www.meteoscientific.com/docs/tutorial-basics/LoRaWAN-Big-Picture
