@@ -25,7 +25,7 @@
 * **Sensors:** DFrobot analog pH sensor pro (SEN0169), DfRobot analog conductivity sensor (SEN0451), Adafruit StemmaQT VL53L4CD Time of Flight -sensor 
 * **Gateway:** Dragino LoRaWAN Gateway LPS8V2 *
 * **Actuators** Servo- motor
-* **Power supplys:**  AKY0393Li-Po -battery 2200mAh (Arduino + sensors), ? (XIAO), ? (Servo motor??)
+* **Power supplys:**  AKY0393Li-Po -battery 2200mAh (Arduino + sensors), XIAO-ESP32C3, `Servomoottori MG996R`, `IRLU8721-N channel MOSFET`
 ## 💻 Software requirements
   * Arduino IDE for programming the sensor node and the drain valve
 ## ⚙️ Getting Started / Setup Instructions
@@ -36,7 +36,7 @@
 * Arduino MKR1310: Open the `ph_to_lora_github.ino` sketch in in the Arduino IDE.
 * Install the required libraries: `Arduino Low Power`, `MKRWAN_V2` and `DFRobot_ECPRO-master`, `Sparkfun_VL53L1X_4m_Laser_Distance_Sensor`,`ESP32Servo`.
 * Open `arduino_secrets.h` and enter your LoRaWAN-keys (`AppEUI`, `AppKey` are re-programmed on the MKR1310).
-* ESP32-C3: Upload the ` Drain_water_6_Tunti.ino,`Servomoottori MG996R`, `IRLU8721-N channel MOSFET`  
+* ESP32-C3: Upload the ` Drain_water_6_Tunti.ino'  
 ### 3. Dragino & LoRaWAN-server (`/gateway`) 
 * Configure the Dragino gateway to use the correct frequency plan (`EU868`, see screenshots for reference).
 * Point the gateway to the LoRaWAN server (in this case, the built-in ChirpStack server on the Dragino).
